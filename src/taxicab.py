@@ -45,7 +45,7 @@ class Direction:
         state = self.state % 4
         return ['north', 'east', 'south', 'west'][state]
 
-def parse_document(sequence):
+def process_sequence(sequence):
     x, y = 0, 0
 
     direction = Direction()
@@ -56,12 +56,13 @@ def parse_document(sequence):
         direction.turn(turn)
         movements[direction.facing] += int(distance)
 
-    east_west = movements['east'] - movements['west']
-    north_south = movements['north'] - movements['south']
-    print('distance: {}'.format(north_south + east_west))
+    east_west = abs(movements['east'] - movements['west'])
+    north_south = abs(movements['north'] - movements['south'])
+    return east_west + north_south
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("provide sequence")
         raise SystemExit()
-    parse_document(sys.argv[1])
+    print('distance: {}'.format(process_sequence(sys.argv[1])))
