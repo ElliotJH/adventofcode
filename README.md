@@ -1,6 +1,10 @@
 # Advent of Code Solutions
 
-* Warning Spoilers *
+_Warning Spoilers_
+
+[![Build Status](https://travis-ci.org/ElliotJH/adventofcode.svg?branch=master)](https://travis-ci.org/ElliotJH/adventofcode)
+
+
 
 Solutions by me to the [Advent of Code](http://adventofcode.com/)
 
